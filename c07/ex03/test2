@@ -1,0 +1,86 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    test2                                              :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: xzhao <marvin@42.fr>                       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/21 15:43:29 by xzhao             #+#    #+#              #
+#    Updated: 2019/06/22 11:45:29 by xzhao            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#include <stdlib.h>
+
+int        ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char    *ft_strcpy(char *dest, char *src)
+{
+	int i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+int        size_strs(char **strs, int size)
+{
+	int i;
+	int nb;
+
+	i = 0;
+	nb = 0;
+	while (i < size)
+	{
+		nb += ft_strlen(strs[i]);
+		i++;
+	}
+	return (nb);
+}
+
+char    *size_zero(char *result)
+{
+	result = malloc(sizeof(char));
+	result[0] = '\0';
+	return (result);
+}
+
+char    *ft_strjoin(int size, char **strs, char *sep)
+{
+	int        i;
+	int        k;
+	char    *result;
+
+	result = NULL;
+	k = 0;
+	i = 0;
+	if (size == 0)
+		return (size_zero(result));
+	result = malloc(sizeof(*result)* (ft_strlen(sep) * (size - 1) +
+				size_strs(strs, size) + 1));
+	while (i < size - 1)
+	{
+		ft_strcpy((result + k), strs[i]);
+		k += ft_strlen(strs[i]);
+		ft_strcpy((result + k), sep);
+		k += ft_strlen(sep);
+		i++;
+	}
+	ft_strcpy((result + k), strs[i]);
+	k = ft_strlen(strs[i]) + k + 1;
+	result[k] = '\0';
+	return (result);
+}
