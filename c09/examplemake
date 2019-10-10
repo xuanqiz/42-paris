@@ -1,4 +1,0 @@
-TEXT = "42 is for the braves"
-
-regle_a:
-	echo $(TEXT)

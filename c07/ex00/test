@@ -1,9 +1,0 @@
-int *toto;
-
-len = 5;
-
-malloc(sizeof(int) * len + 1);
-
-4 * 6 = 24
-
-4 * 5 + 1 =21
