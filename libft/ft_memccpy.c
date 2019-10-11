@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 19:35:00 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/09 20:02:08 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/09 20:08:33 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,12 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	}
 	return (NULL);
 }
+
+/* the difference between memccpy and memcpy are:
+ * 1, add new condition - if a pre-defined value c exists in the src, the copy stops
+ * 2, return different values depends on the condition:
+ * condition fulfilled - stop copy and return dst after the copy
+ * condition not match - copy predefined n and return NULL
+ *
+ * this function we need to define an extra value i, in order to locate n
+ * ?? again, what is overlapping thing and what is undefined behavior??

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/11 20:16:59 by xzhao             #+#    #+#             */
+/*   Updated: 2019/10/11 20:17:09 by xzhao            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
@@ -22,8 +34,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 
-/* refer to c03 ft_strstr, we try to find needle in haystack, but we won't search for all of them.
-we only search a predefined length(len).
-the first while goes over haystack, the inner while to check whether there are characters fully match needle, not just partly
-if so, it will starts to write?? not sure about &
+/*
+** refer to c03 ft_strstr, we try to find needle in haystack, but we won't search for all of them.
+** we only search a predefined length(len).
+** the first while goes over haystack, the inner while to check whether there are characters fully match needle, not just partly
+** if so, it will starts to write?? not sure about &
 */

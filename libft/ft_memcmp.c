@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 21:25:51 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/09 21:58:48 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/09 22:00:33 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,9 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
+/* this funtion aims to compare two strings:
+ * if they don't exist or they are same, return 0;
+ * if we find the difference, reteurn the value of first found difference.
+ * */
+

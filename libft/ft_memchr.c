@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 21:11:51 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/09 21:23:12 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/09 21:25:28 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i++ < n)
 	{
 		if (ptr[i] == (unsigned char)c)
-			return ((void *)ptr[i]);
+			return ((void *)ptr[i]); /*not sure*/
 	}
 	return (NULL);
 }
+
+/* this function firstly test whether there is a predefined c existing in the string
+ * if it is, then it stops and just return this byte
+ * if not, it return null*/
+

@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 22:20:00 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/09 22:29:43 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/09 22:32:35 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,9 @@ char	*ft_strchr(const char *s, int c)
 		return ((char*)s);
 	return (0);
 }
+
+/* this function aim to find a predefined c in the string:
+ * if it exist, return the pointer of this byte (if the predefined c is the ending, we should return ending);
+ * if not, return 0
+ * */
+
