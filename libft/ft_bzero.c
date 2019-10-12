@@ -14,15 +14,11 @@
 
 void ft_bzero(void *string_s, size_t n)
 {
-	unsigned char *p;
-
-	p = (unsigned char *)string_s;
-	if (p == NULL)
-		return ;
-	while (n-- > 0)
-		*(p++) = '\0';
+	ft_memset(string_s, 0, n);
 }
 
 /* this function write 0 to existing bytes of string_s
- * it doesn't return anything
+** it doesn't return anything
+** it is a partial version of memset, memset can write any value c, but this one
+** only 0
  */

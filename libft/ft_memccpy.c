@@ -14,7 +14,7 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t				i;
+	size_t		i;
 	unsigned char *p_dst;
 	unsigned char *p_src;
 
@@ -32,10 +32,9 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 }
 
 /* the difference between memccpy and memcpy are:
- * 1, add new condition - if a pre-defined value c exists in the src, the copy stops
- * 2, return different values depends on the condition:
- * condition fulfilled - stop copy and return dst after the copy
- * condition not match - copy predefined n and return NULL
- *
- * this function we need to define an extra value i, in order to locate n
- * ?? again, what is overlapping thing and what is undefined behavior??
+** 1, add condition: if a pre-defined c exists in the src, copy then stop
+** 2, return different values depends on the condition:
+** condition fulfilled - after copy c,stops and return the byte after copy c
+** condition not match - copy predefined n and return NULL
+** this function we need to define an extra value i, in order to locate n
+*/

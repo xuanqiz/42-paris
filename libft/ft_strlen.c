@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s) /* why size_t? */
+size_t	ft_strlen(const char *s)
 {
 	size_t i;
 
@@ -21,3 +21,9 @@ size_t	ft_strlen(const char *s) /* why size_t? */
 		i++;
 	return (i);
 }
+
+/* compare to the ft_strlen that we write in piscine
+** this one is more precise
+** 1, we use const char to say that we will read string only
+** 2, the type is size_t, similiar to unsigned int (not fully understood)
+*/

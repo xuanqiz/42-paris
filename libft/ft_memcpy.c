@@ -24,6 +24,12 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 	return(dst);
 }
 
-/* while source(src) is existing, we copy it to the destination(dst), but we return not the new dst, instead, the original one.
- * ???how to write undefined behavior -- when dst and src is overlapping? call memmove?*/
+/* while source(src) is existing, we copy it to the destination(dst),
+** but we return not the new dst, instead, the original one.
+** this one only works when dst and src is not overlapping on each other,
+** overlapping indicates their storage space.
+** we take the value from src, but not write on it, so it is const,
+** const means read only
+** we need to write on dst, so it is not const.
+*/
 

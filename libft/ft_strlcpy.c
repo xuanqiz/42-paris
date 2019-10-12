@@ -12,8 +12,26 @@
 
 #include "libft.h"
 
-size_t	(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	
+	size_t i;
 
+	i = 0;
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	while (--dstsize && src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (ft_strlen(src));
 }
+
+/* this function copies from src to dst for (size -1) of dest
+** it returns the length of the string that it copied (=src)
+** details:
+** it starts with --dstsize, so that we can write dest[i] = 0
+** because we reserved one byte for Null-termination
+** the i is calculated in the loop but not written src[i]
+*/

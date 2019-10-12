@@ -23,11 +23,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	if (p_src < p_dst)
 		while (i++ < len)
-			p_dst[len - i - 1] = p_src[len - i - 1]; /* if we use ++i <= len, then we take [len - i] here*/
+			p_dst[len - i - 1] = p_src[len - i - 1];
 	else
-		while (len-- > 0)
-			*(p_dst++) = *(p_src++); /* or write return (ft_memcpy (dst, src, len)*/
+		ft_memcpy(dst, src, len);
 	return (dst);
 }
 
-/* this function deal with special situation that the dst might take the space of src, in this case, we need to copy the information from the end to the begining. Otherwise, when we start to copy the overlapping part from src(which is the begining of dst), it has already replaced by the begining of src. */
+/* this function handles situation that the dst might take the space of src
+** In this case, we need to copy the information from the end to the begining. 
+** Otherwise, when we start to copy the overlapping part from src
+** (where dst begins), it has already replaced by the begining of src.
+** other details in this script:
+** if we use ++i in the while, then we take [len - i]
+*/
