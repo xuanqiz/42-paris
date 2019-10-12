@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:05:13 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/09 19:31:40 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/12 18:33:02 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <unistd.h>
 # include <string.h>
-# include <ctype.h> /*for isalpha*/
-# include <xlocale.h> /*for toupper*/
+# include <ctype.h>
+# include <xlocale.h>
 
 int	ft_atoi(const char *str);
 void	ft_bzero(void *string_s, size_t n);
@@ -34,8 +34,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void	*string_b, int	value_c, size_t len);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strup(const char *s1);
-size_t	ft_strlcat(char *dst, const char* src, size_t dstsize);
-size_t	ft_strlcpy(char *dst, const char* src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char*needle, size_t len);
@@ -44,3 +44,8 @@ int	ft_tolower(int c);
 int	ft_toupper(int c);
 
 #endif
+
+/*
+** <ctype.h> is for ft_isalpha
+** <xlocale.h> is for ft_toupper
+*/

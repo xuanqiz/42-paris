@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/12 18:05:26 by xzhao             #+#    #+#             */
+/*   Updated: 2019/10/12 18:05:29 by xzhao            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lifbt.h"
 
 int	ft_sign(char *str)
@@ -18,7 +30,7 @@ int	ft_sign(char *str)
 			sign *= -1;
 		i++;
 	}
-        return(sign)
+        return(sign);
 }
 
 int		ft_atoi(const char *str)
@@ -46,5 +58,5 @@ int		ft_atoi(const char *str)
 		n *= 10;
 	}
 	result = result * ft_sign(str)
-	return (result)
+	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 21:11:51 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/09 21:25:28 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/12 18:30:03 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-/* this function firstly test whether there is a predefined c in the string
+/*
+** this function firstly test whether there is a predefined c in the string
 ** if it is, then it stops and just return this byte
 ** if not, it return null
 ** ?? do I need to return( (void *)string[i])
 */
-

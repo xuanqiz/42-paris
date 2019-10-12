@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 20:09:10 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/09 21:13:56 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/12 18:26:19 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char			*p_dst;
-	unsigned char			*p_src;
-	size_t						i;
+	unsigned char	*p_dst;
+	unsigned char	*p_src;
+	size_t				i;
 
 	p_dst = (unsigned char *)dst;
 	p_src = (unsigned char *)src;
@@ -29,8 +29,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	return (dst);
 }
 
-/* this function handles situation that the dst might take the space of src
-** In this case, we need to copy the information from the end to the begining. 
+/*
+** this function handles situation that the dst might take the space of src
+** In this case, we need to copy the information from the end to the begining
 ** Otherwise, when we start to copy the overlapping part from src
 ** (where dst begins), it has already replaced by the begining of src.
 ** other details in this script:

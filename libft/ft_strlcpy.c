@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 22:13:12 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/09 22:17:43 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/12 18:30:27 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (ft_strlen(src));
 }
 
-/* this function copies from src to dst for (size -1) of dest
+/*
+** this function copies from src to dst for (size -1) of dest
 ** it returns the length of the string that it copied (=src)
 ** details:
 ** it starts with --dstsize, so that we can write dest[i] = 0

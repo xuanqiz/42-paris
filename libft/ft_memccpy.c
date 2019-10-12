@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 19:35:00 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/09 20:08:33 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/12 18:45:39 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t		i;
-	unsigned char *p_dst;
-	unsigned char *p_src;
+	size_t					i;
+	unsigned char		*p_dst;
+	unsigned char		*p_src;
 
 	p_dst = (unsigned char*)dst;
 	p_src = (unsigned char*)src;
@@ -31,7 +31,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	return (NULL);
 }
 
-/* the difference between memccpy and memcpy are:
+/*
+** the difference between memccpy and memcpy are:
 ** 1, add condition: if a pre-defined c exists in the src, copy then stop
 ** 2, return different values depends on the condition:
 ** condition fulfilled - after copy c,stops and return the byte after copy c
