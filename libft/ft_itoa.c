@@ -38,6 +38,4 @@ char	*ft_itoa(int n)
 	number = n;
 	if (!(str = malloc(sizeof(char) * (ft_strlen(ft_putnbr(n))) + 1))
 			return (0);
-	
-	
 }
