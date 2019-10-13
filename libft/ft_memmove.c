@@ -6,17 +6,17 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 20:09:10 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/12 18:26:19 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/13 16:39:11 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void				*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*p_dst;
 	unsigned char	*p_src;
-	size_t				i;
+	size_t			i;
 
 	p_dst = (unsigned char *)dst;
 	p_src = (unsigned char *)src;

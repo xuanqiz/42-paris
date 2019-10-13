@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 20:20:43 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/13 16:41:25 by xzhao            ###   ########.fr       */
+/*   Created: 2019/10/13 17:32:05 by xzhao             #+#    #+#             */
+/*   Updated: 2019/10/13 17:37:13 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int		main()
 {
-	char	*res;
-	int		i;
-
-	i = 0;
-	if (!(res = (char*)malloc(sizeof(char) * ft_strlen(s) + 1)))
-		return (NULL);
-	while (s[i])
-	{
-		res[i] = (*f)(i, s[i]);
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
+	write (1, "abc", 1);
+	write (0, "abc", 1);
+	write (2, "abc", 1);
 }

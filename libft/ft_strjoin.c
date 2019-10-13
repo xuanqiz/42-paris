@@ -6,17 +6,17 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 20:00:34 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/12 20:18:42 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/13 16:43:16 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char				*ft_strjoin(char const *s1, char const *s2)
 {
-	char *d;
-	size_t i;
-	size_t len;
+	char			*d;
+	size_t			i;
+	size_t			len;
 
 	len = ft_strlen(s1) + ft_strlen(s2);
 	d = (char *)malloc(sizeof(char) * len + 1);

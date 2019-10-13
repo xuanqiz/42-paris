@@ -1,41 +1,67 @@
-#inlcude "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/13 17:04:02 by xzhao             #+#    #+#             */
+/*   Updated: 2019/10/13 17:29:43 by xzhao            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_putnbr(int n)
+#include "libft.h"
+
+static	size_t	ft_size(long n)
 {
-	int sign;
-	long nbr;
+	size_t	len;
 
-	nbr = n;
-	sign = 1;
+	len = 0;
 	if (n < 0)
+		len++;
+	if (n == 0)
+		len = 1;
+	while (n != 0)
 	{
-		nbr *= -1;
-		sign = -1;
-	}
-	if (n >= 10)
 		n = n / 10;
-		ft_putnbr(n % 10 + '0');
-	if (nbr < 10)
-		ft_putchar(n % 10 + '0');
+		len++;
+	}
+	return (len);
 }
 
-int	ft_strlen(*str)
+static	void	ft_trans(char *str, long nbr, int size)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
+	while (i < size)
+	{
+		str[size - i - 1] = n % 10 + '0';
+		nbr = nbr / 10;
 		i++;
-	return (i);
+	}
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	long number;
-	int i;
-	int ls;
+	char	*str;
+	size_t	size;
+	int		sign;
+	long	nbr;
 
-	number = n;
-	if (!(str = malloc(sizeof(char) * (ft_strlen(ft_putnbr(n))) + 1))
-			return (0);
+	nbr = n;
+	sign = 1;
+	size = ft_size(nbr);
+	if (!(str = (char *)malloc(sizeof(char *) * size + 1)))
+		return (NULL);
+	if (nbr < 0)
+	{
+		sign = -1;
+		nbr *= -1;
+	}
+	ft_trans(str, nbr, size);
+	if (sign == -1)
+		str[0] = '-';
+	str[size] = '\0';
+	return (str);
 }

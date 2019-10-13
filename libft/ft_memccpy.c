@@ -6,15 +6,15 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 19:35:00 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/12 18:45:39 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/13 16:38:38 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void					*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t					i;
+	size_t				i;
 	unsigned char		*p_dst;
 	unsigned char		*p_src;
 
