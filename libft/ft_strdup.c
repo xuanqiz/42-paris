@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 18:34:45 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/12 18:41:11 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/13 18:36:33 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,10 @@ char	*ft_strdup(const char *s1)
 	str[i] = '\0';
 	return (str);
 }
+
+/*
+** it allocates memory for a string first
+** copy this string to a new one
+** return a pointer to the new string
+** ?? errno is set to ENOMEM ??
+*/

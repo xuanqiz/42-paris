@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 20:50:35 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/12 20:52:34 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/13 18:33:30 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,17 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	total;
-	void	*value;
+	void	*str;
 
-	total = count * sizez;
-	value = malloc(total);
-	if (value != 0)
-		ft_memset(value, 0, size);
-	return (value);
+	total = count * size;
+	str = malloc(total);
+	if (str != 0)
+		ft_memset(str, 0, size);
+	return (str);
 }
+
+/*
+** malloc only assigns a space together
+** calloc check "object" (int, char etc) first and then * size
+** and also write 0 to all of it
+*/
