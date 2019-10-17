@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:49:12 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/17 17:24:53 by xzhao            ###   ########.fr       */
+/*   Created: 2019/10/17 17:34:45 by xzhao             #+#    #+#             */
+/*   Updated: 2019/10/17 20:18:44 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int i;
+	char	*str;
+	int		i;
 
-	i = ft_strlen(*s);
-	while (i >= 0)
+	i = 0;
+	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	str = ft_bzero(str, len);
+	while (i < len && s[start + i])
 	{
-		if (s[i] == c)
-			return ((char)s[i]);
-		i--;
+		str[i] = s[start + i];
+		i++;
 	}
-	if (c == '\0')
-		return ((char)s[i]);
-	return (NULL);
+	return (str);
 }
 
 /*
-** check backwards
+** write a new string, which takes part from the inital one *s
+** it begins with the s[start], and last for 'len' long
 */
