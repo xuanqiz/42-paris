@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 17:04:02 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/13 17:29:43 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/22 20:55:39 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static	void	ft_trans(char *str, long nbr, int size)
 	i = 0;
 	while (i < size)
 	{
-		str[size - i - 1] = n % 10 + '0';
+		str[size - i - 1] = nbr % 10 + '0';
 		nbr = nbr / 10;
 		i++;
 	}
@@ -52,7 +52,7 @@ char			*ft_itoa(int n)
 	nbr = n;
 	sign = 1;
 	size = ft_size(nbr);
-	if (!(str = (char *)malloc(sizeof(char *) * size + 1)))
+	if (!(str = (char *)malloc(sizeof(char *) * (size + 1))))
 		return (NULL);
 	if (nbr < 0)
 	{

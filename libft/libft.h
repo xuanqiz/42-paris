@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:05:13 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/22 19:51:57 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/22 20:56:17 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <ctype.h>
 # include <xlocale.h>
+# include <stdlib.h>
 
 typedef	struct		s_list
 {

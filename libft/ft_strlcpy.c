@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 22:13:12 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/12 18:30:27 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/22 21:01:48 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		dst[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	dst[i] = '\0';
 	return (ft_strlen(src));
 }
 
