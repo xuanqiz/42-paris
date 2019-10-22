@@ -1,8 +1,20 @@
-.PHONY: re, clean, fclean, all
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: xzhao <marvin@42.fr>                       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/10/22 19:30:23 by xzhao             #+#    #+#              #
+#    Updated: 2019/10/22 19:40:01 by xzhao            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME = Libft.a
 
-SRC_FILES = ft_memset.c\
+.PHONY: re, clean, fclean, all
+
+SRC = ft_memset.c\
 		ft_bzero.c\
 		ft_memcpy.c\
 		ft_memccpy.c\
@@ -21,7 +33,7 @@ SRC_FILES = ft_memset.c\
 		ft_isalnum.c\
 		ft_isascii.c\
 		ft_isprint.c\
-		ft_toipper.c\
+		ft_toupper.c\
 		ft_tolower.c\
 		ft_calloc.c\
 		ft_strdup.c\
@@ -34,9 +46,9 @@ SRC_FILES = ft_memset.c\
 		ft_putchar_fd.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
-		ft_putnbr_fd\
+		ft_putnbr_fd.c\
 
-SRC_BONUS = ft_lstnew_bonus.c\
+SRC_B = ft_lstnew_bonus.c\
 			ft_lstadd_front_bonus.c\
 			ft_lstsize_bonus.c\
 			ft_lstlast_bonus.c\
@@ -44,25 +56,31 @@ SRC_BONUS = ft_lstnew_bonus.c\
 			ft_lstdelone_bonus.c\
 			ft_lstclear_bonus.c\
 			ft_lstiter_bonus.c\
-			ft_lstmap_bonus.c\
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -I. -c
 
-OBJS = ${SRC_FILES: .c = .o}
+OBJS = $(SRC: %.c = %.o)
+
+OBJS_B= $(SRC_B: %.c = %.o)
 
 all: $(NAME)
 
-$(NAME) : $(OBJ)
-	@ar rc $(NAME) $(OBJS)
-	@ranlib $(NAME)
+$(NAME) : $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c
-	@gcc -c FLAGS $< -o $@
+$(OBJS) : $(SRC)
+	gcc $(FLAGS) $(SRC)
 
-bonus: 
+$(OBJS_B) : $(SRC_B)
+	gcc $(FLAGS) $(SRC_B)
+
+bonus: fclean $(OBJS) $(OBJS_B)
+	ar rcs libft.a $(OBJS) $(OBJS_B)
 
 clean:
-	@rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS_B)
+
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
+
 re: fclean all
