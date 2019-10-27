@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 19:11:53 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/12 18:25:48 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/27 18:29:49 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	p_dst = (unsigned char*)dst;
 	p_src = (unsigned char*)src;
+	if ((dst == NULL) && (src == NULL))
+		return (NULL);
 	while (n-- > 0)
 		*(p_dst++) = *(p_src++);
 	return (dst);
@@ -32,4 +34,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 ** we take the value from src, but not write on it, so it is const,
 ** const means read only
 ** we need to write on dst, so it is not const.
+** check whether our input are NULL !!!
 */

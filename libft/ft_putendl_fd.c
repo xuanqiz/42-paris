@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 19:18:43 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/22 21:01:12 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/27 19:36:46 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', 1);
+	ft_putchar_fd('\n', fd);
 }
 
 /*

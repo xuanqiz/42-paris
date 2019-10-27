@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:08:11 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/12 18:28:11 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/27 18:25:56 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memset(void *string_b, int value_c, size_t len)
 	unsigned char	*b;
 	unsigned char	c;
 
-	if (string_b == NULL)
-		return (NULL);
 	b = (unsigned char *)string_b;
 	c = (unsigned char)value_c;
 	while (len-- > 0)
@@ -38,4 +36,7 @@ void	*ft_memset(void *string_b, int value_c, size_t len)
 ** we don't return it.
 ** b = (unsigned char *)string_b;
 ** ()means to change the type of string_b from void to unsigned char
+** originally, I started this function with writing if string_b == NULL;
+** but this is a void function, it cannot return NULL under such condition
+** it is not neccessary to do protection then
 */

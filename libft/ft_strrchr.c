@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 15:49:12 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/22 21:19:31 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/27 19:04:09 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (s[i] == c)
-			return ((char *)s);
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
 		i--;
 	}
-	if (c == '\0')
-		return ((char *)s);
 	return (NULL);
 }
 
 /*
 ** check backwards
+** return "(char *)&s[i]" is different from "(char *)s"
+** while loop needs to test i = 0, because it is the first character
 */

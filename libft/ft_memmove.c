@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 20:09:10 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/13 16:39:11 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/27 18:32:35 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void				*ft_memmove(void *dst, const void *src, size_t len)
 	p_src = (unsigned char *)src;
 	i = 0;
 	if (p_src < p_dst)
-		while (i++ < len)
-			p_dst[len - i - 1] = p_src[len - i - 1];
+		while (++i <= len)
+			p_dst[len - i] = p_src[len - i];
 	else
 		ft_memcpy(dst, src, len);
 	return (dst);

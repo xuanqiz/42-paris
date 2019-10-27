@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 21:11:51 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/22 21:18:45 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/27 18:48:09 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*string;
-	size_t			i;
 
 	string = (unsigned char *)s;
-	i = 0;
-	while (i++ < n)
+	while (n-- > 0)
 	{
-		if (string[i] == (unsigned char)c)
+		if (*string == (unsigned char)c)
 			return (string);
+		string++;
 	}
 	return (NULL);
 }
@@ -32,4 +31,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 ** if it is, then it stops and just return this byte
 ** if not, it return null
 ** ?? do I need to return( (void *)string[i])  - no!
+** why it doesn't work for if(i++< n), string[i] = c, return string?
 */
