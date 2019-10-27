@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 17:04:02 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/27 19:31:32 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/27 20:02:21 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char			*ft_itoa(int n)
 	nbr = n;
 	sign = 1;
 	size = ft_size(nbr);
-	if (!(str = (char *)malloc(sizeof(char *) * (size + 1))))
+	if (!(str = (char *)malloc(sizeof(char *) * (size) + 1)))
 		return (NULL);
 	if (nbr < 0)
 	{

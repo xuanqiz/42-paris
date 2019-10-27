@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 20:50:35 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/27 19:28:08 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/27 20:38:37 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,17 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	total;
 	void	*str;
+	size_t	i;
 
 	total = count * size;
-	str = malloc(total);
-	if (str != 0)
-		ft_memset(str, 0, size);
+	if (!(str = malloc(total)))
+		return (0);
+	i = 0;
+	while (i < total)
+	{
+		((char *)str)[i] = 0;
+		i++;
+	}
 	return (str);
 }
 

@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 18:05:26 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/22 21:34:49 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/10/27 20:15:08 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	nb;
-	int	sign;
-	int	i;
+	long	nb;
+	int		sign;
+	int		i;
 
 	nb = 0;
 	sign = 0;
