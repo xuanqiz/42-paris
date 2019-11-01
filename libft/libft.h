@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:05:13 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/27 20:17:44 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/01 12:42:00 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(void*));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void*),
+														void (*del)(void *));
 
 #endif
 

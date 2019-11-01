@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 20:19:45 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/12 20:20:06 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/01 11:48:40 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ char			**ft_split(char const *s, char c)
 	char	**res;
 	int		i;
 
+	if (s == NULL)
+		return (NULL);
 	if (!(res = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1))))
 		return (NULL);
 	i = 0;
@@ -74,3 +76,7 @@ char			**ft_split(char const *s, char c)
 	res[i] = NULL;
 	return (res);
 }
+
+/*
+** protect the function by cchecking s == null, not c
+*/

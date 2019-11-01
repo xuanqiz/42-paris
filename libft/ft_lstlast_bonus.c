@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:29:03 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/18 21:19:35 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/01 12:12:23 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,16 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *last;
-	t_list *temp;
+	t_list *list;
 
-	temp = lst;
-	while (temp)
-	{
-		if (!(temp->next))
-			last = temp;
-		temp = temp->next;
-	}
-	return (last);
+	if ((list = lst) == NULL)
+		return (NULL);
+	while (list->next)
+		list = list->next;
+	return (list);
 }
 
 /*
-** we need a *temp(ortary) t_list to take the value of lst,
-** so that we keep the original lst while finding the last element,
-** the logic of this one is:
-** when temp (lst) exists, check whether it is reaches to the end
-** if it reaches to the end, take it and assign it to (*last)
-** if not, keep going [temp = temp->next] equivilant to i++ in the string
+** firstly check whether it is an empty list
+** then when there is a next, just take it until the last one
 */

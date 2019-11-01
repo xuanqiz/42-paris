@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:21:55 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/17 20:51:50 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/01 11:46:08 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ char				*ft_strtrim(char const *s1, char const *set)
 	size_t			end;
 	char			*res;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	if (ft_strlen(s1) != 0)
 	{
 		start = ft_start(s1, set);
@@ -78,4 +80,5 @@ char				*ft_strtrim(char const *s1, char const *set)
 ** s1 = [wwstarww] set = [star], it returns [wwstarww] not trimed
 ** s1 = [ppppp] set = [6], it returns [ppppp] set not found
 ** s1 = [ppppp] set = [pp6], it returns "" because "end" < "start"
+** protect the funtion by checking s1/set == null
 */

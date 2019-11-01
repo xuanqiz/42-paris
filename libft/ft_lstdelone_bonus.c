@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:41:53 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/18 21:06:50 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/01 12:50:59 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
+	if (!lst || !del)
+		return ;
 	del(lst->content);
 	free(lst);
-	lst = NULL;
 }
 
 /*

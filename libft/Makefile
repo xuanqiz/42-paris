@@ -6,7 +6,7 @@
 #    By: xzhao <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/22 19:30:23 by xzhao             #+#    #+#              #
-#    Updated: 2019/10/22 20:46:04 by xzhao            ###   ########.fr        #
+#    Updated: 2019/11/01 12:40:59 by xzhao            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRC_B = ft_lstnew_bonus.c\
 			ft_lstdelone_bonus.c\
 			ft_lstclear_bonus.c\
 			ft_lstiter_bonus.c\
+			ft_lstmap_bonus.c\
 
 FLAGS = -Wall -Wextra -Werror -I. -c
 
