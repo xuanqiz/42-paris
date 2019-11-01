@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:05:13 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/01 12:42:00 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/01 13:12:41 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,5 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void*),
 /*
 ** <ctype.h> is for ft_isalpha
 ** <xlocale.h> is for ft_toupper
+** <stdlib.h> is for free
 */
