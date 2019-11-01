@@ -6,7 +6,7 @@
 #    By: xzhao <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/22 19:30:23 by xzhao             #+#    #+#              #
-#    Updated: 2019/11/01 12:40:59 by xzhao            ###   ########.fr        #
+#    Updated: 2019/11/01 14:41:13 by xzhao            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,9 @@ SRC_B = ft_lstnew_bonus.c\
 			ft_lstiter_bonus.c\
 			ft_lstmap_bonus.c\
 
-FLAGS = -Wall -Wextra -Werror -I. -c
+FLAGS = -Wall -Wextra -Werror -c
+
+INC = libft.h
 
 OBJS = $(SRC:%.c=%.o)
 
@@ -65,14 +67,14 @@ OBJS_B = $(SRC_B:%.c=%.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME) : $(OBJS) $(INC)
 	ar rcs $(NAME) $(OBJS)
 
 $(OBJS) : $(SRC)
-	gcc $(FLAGS) $(SRC)
+	gcc $(FLAGS) $(SRC) -I $(INC)
 
-$(OBJS_B) : $(SRC_B)
-	gcc $(FLAGS) $(SRC_B)
+$(OBJS_B) : $(SRC_B) 
+	gcc $(FLAGS) $(SRC_B) -I $(INC)
 
 bonus : fclean $(OBJS) $(OBJS_B)
 	ar rcs $(NAME) $(OBJS) $(OBJS_B)
@@ -86,3 +88,10 @@ fclean : clean
 re : fclean all
 
 .PHONY: re, clean, fclean, all
+
+/*
+** instead write Flags = 3W -I, write include seperately
+** and then add dependency
+** so that when we mmake changes in libft.h
+** it will make again every time
+*/

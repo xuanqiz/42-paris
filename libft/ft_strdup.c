@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 18:34:45 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/13 18:36:33 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/01 14:42:11 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,6 @@ char	*ft_strdup(const char *s1)
 ** copy this string to a new one
 ** return a pointer to the new string
 ** ?? errno is set to ENOMEM ??
+** we don't need to protect this one
+** it is required to return segment fault when s1 == NULL
 */
