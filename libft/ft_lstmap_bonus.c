@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 12:37:55 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/01 12:48:08 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/09 12:01:54 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*d)(void *))
 	}
 	return (first_elem);
 }
+
+/*
+** firstly, we test whether lst exist -- for protection
+** we now create the new list by ft_lstnew, applies function
+** write it to the current and let this one be the first
+** then we move to the next
+** we do this again if the next exists in lst
+** the only new step is : if there is something wrong
+** we need to use ft_lstclear to delete all lst that we have read
+** ft_lstclear delete the list from the begining till current
+** so it goes back to the &first
+** to release the memory space
+** return new list == return the begining of the list
+*/

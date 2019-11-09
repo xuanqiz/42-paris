@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 20:16:59 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/27 20:09:44 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/08 21:17:58 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 ** we only search a predefined length(len).
 ** the first while loop goes over haystack,
 ** the inner while loop to check whether there are characters FULLY
-** match needle, not just partly
-** if we find a fully matched, we return a pointer
+** ft_strncmp -- compare two strings less than n characters
+** if the difference == 0, which means they match each other
+** not just partly but a fully match, we return a pointer
 ** which points to the first byte of needle in haystack
 */

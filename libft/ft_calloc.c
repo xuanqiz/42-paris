@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 20:50:35 by xzhao             #+#    #+#             */
-/*   Updated: 2019/10/27 20:38:37 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/08 21:14:25 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,6 @@ void	*ft_calloc(size_t count, size_t size)
 ** malloc only assigns a space together
 ** calloc check "object" (int, char etc) first and then * size
 ** and also write 0 to all of it
+** protection check at the beginning
+** modify to respond  gcc warning
 */
