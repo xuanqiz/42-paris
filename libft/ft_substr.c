@@ -6,29 +6,38 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:34:45 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/01 14:31:31 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/09 13:42:09 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static size_t		inner_strlen(const char *s)
 {
-	char	*str;
 	size_t	i;
 
 	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+char				*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char			*str;
+	size_t			i;
+
 	if (s == NULL)
 		return (NULL);
-	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
+	if ((str = (char *)malloc(len + 1)) == NULL)
 		return (NULL);
-	ft_bzero(str, len);
-	while ((i < len) && s[start + i])
+	i = 0;
+	while (i < len && *(s + start + i) && start < inner_strlen(s))
 	{
-		str[i] = s[start + i];
+		*(str + i) = *(s + start + i);
 		i++;
 	}
-	str[i] = '\0';
+	*(str + i) = '\0';
 	return (str);
 }
 
