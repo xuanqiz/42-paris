@@ -6,7 +6,7 @@
 #    By: xzhao <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/22 19:30:23 by xzhao             #+#    #+#              #
-#    Updated: 2019/11/01 14:41:13 by xzhao            ###   ########.fr        #
+#    Updated: 2019/11/11 13:51:17 by xzhao            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,9 +89,8 @@ re : fclean all
 
 .PHONY: re, clean, fclean, all
 
-/*
-** instead write Flags = 3W -I, write include seperately
-** and then add dependency
-** so that when we mmake changes in libft.h
-** it will make again every time
-*/
+# comments mark in makefile is "#" instead of **
+# instead write Flags = 3W -I, write include seperately
+# and then add dependency
+# so that when we mmake changes in libft.h
+# it will make again every time
