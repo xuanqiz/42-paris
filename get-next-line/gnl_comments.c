@@ -14,9 +14,7 @@
 #include <stdlib.h> /*free, malloc*/
 #include <unistd.h> /*read*/
 
-
-
-int	ft_delmem(char **cache, int ret) /*why 2 pointers?*/
+int	ft_delmem(char **cache, int ret)
 {
 	if (*cache)
 	{
@@ -50,14 +48,14 @@ char	*ft_strjoin(char *cache, char *buf, size_t size)
 	len = ft_strlen(cache) + size;
 	if (!(str = (char*)malloc(sizeof(char) * len + 1)))
 		return (0);
-	while (s1 && s1[i])
+	while (cache && cache[i])
 	{
-		str[i] = s1[i];
+		str[i] = cache[i];
 		i++;
 	}
-	while (s2 && s2[j])
+	while (buf && buf[j])
 	{
-		str[i] = s2[j];
+		str[i] = buf[j];
 		i++;
 		j++;
 	}
@@ -65,9 +63,9 @@ char	*ft_strjoin(char *cache, char *buf, size_t size)
 	return (str);
 }
 
-size_t	ft_findn_index(char *cache)
+int	ft_findn_index(char *cache)
 {
-	size_t i;
+	int	i;
 	
 	i = 0;
 	while (cache[i] != '\0')
@@ -93,9 +91,9 @@ char	*ft_substr(const char *cache, size_t start, size_t len)
 {
 	char *str;
 	char *cpy_str;
-	char ptr;
+	char *ptr;
 
-	if (!cache || !(str = (char *(malloc(sizeof(char) * len + 1)))))
+	if (!cache || !(str = (char*)malloc(sizeof(char) * len + 1)))
 		return (0);
 	if (ft_strlen(cache) <= start)
 		str[0] = '\0';
@@ -131,7 +129,7 @@ int	ft_final(char **line, char **cache, size_t index)
 		ret = 0;
 	}
 	ft_delmem(cache, 0);
-	*cache = temp;
+	*cache = tmp;
 	return (ret);
 }
 
@@ -147,7 +145,7 @@ int	get_next_line(int fd, char **line)
 	while ((file_read = read(fd, buf, BUFFER_SIZE)) > 0)
 	{
 		buf[file_read] = '\0';
-		if (!tmp = ft_strjoin(cache, buf, file_read))
+		if (!(tmp = ft_strjoin(cache, buf, file_read)))
 			return (ft_delmem(&cache, -1));
 		ft_delmem(&cache, 0);
 		cache = tmp;
@@ -159,5 +157,5 @@ int	get_next_line(int fd, char **line)
 	if (file_read == 0 && (!cache || *cache == '\0')
 				&& (*line = ft_strzero()))
 		return (ft_delmem(&cache, 0));
-	return (ft_final(line, &cache, find_pos(cache)));
+	return (ft_final(line, &cache, ft_findn_index(cache)));
 }
