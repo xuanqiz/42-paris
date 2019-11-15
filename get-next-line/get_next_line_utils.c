@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/15 19:46:38 by xzhao             #+#    #+#             */
+/*   Updated: 2019/11/15 19:58:09 by xzhao            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-int	ft_delmem(char **cache, int ret)
+int		ft_delmem(char **cache, int ret)
 {
 	if (*cache)
 	{
@@ -26,7 +38,7 @@ char	*ft_strjoin(char *cache, char *buf, size_t size)
 {
 	size_t	len;
 	char	*str;
-	size_t  i;
+	size_t	i;
 	size_t	j;
 
 	i = 0;
@@ -49,10 +61,10 @@ char	*ft_strjoin(char *cache, char *buf, size_t size)
 	return (str);
 }
 
-int	ft_findn_index(char *cache)
+int		ft_findn_index(char *cache)
 {
 	int	i;
-	
+
 	i = 0;
 	while (cache[i] != '\0')
 	{
@@ -63,7 +75,7 @@ int	ft_findn_index(char *cache)
 	return (-1);
 }
 
-char	*ft_strzero()
+char	*ft_strzero(void)
 {
 	char *str;
 
