@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 17:33:39 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/15 20:13:30 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/15 21:31:42 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ char	*ft_substr(const char *cache, size_t start, size_t len)
 	return (str);
 }
 
-int		ft_final(char **line, char **cache, size_t index)
+int		ft_output(char **line, char **cache, size_t index)
 {
 	char	*tmp;
 	int		ret;
@@ -159,5 +159,5 @@ int		get_next_line(int fd, char **line)
 	if (file_read == 0 && (!cache || *cache == '\0')
 				&& (*line = ft_strzero()))
 		return (ft_delmem(&cache, 0));
-	return (ft_final(line, &cache, ft_findn_index(cache)));
+	return (ft_output(line, &cache, ft_findn_index(cache)));
 }
