@@ -34,14 +34,14 @@ char	*ft_strjoin(char *cache, char *buf, size_t size)
 	len = ft_strlen(cache) + size;
 	if (!(str = (char*)malloc(sizeof(char) * len + 1)))
 		return (0);
-	while (s1 && s1[i])
+	while (cache && cache[i])
 	{
-		str[i] = s1[i];
+		str[i] = cache[i];
 		i++;
 	}
-	while (s2 && s2[j])
+	while (buf && buf[j])
 	{
-		str[i] = s2[j];
+		str[i] = buf[j];
 		i++;
 		j++;
 	}
@@ -49,9 +49,9 @@ char	*ft_strjoin(char *cache, char *buf, size_t size)
 	return (str);
 }
 
-size_t	ft_findn_index(char *cache)
+int	ft_findn_index(char *cache)
 {
-	size_t i;
+	int	i;
 	
 	i = 0;
 	while (cache[i] != '\0')

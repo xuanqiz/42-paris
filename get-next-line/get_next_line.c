@@ -16,9 +16,9 @@ char	*ft_substr(const char *cache, size_t start, size_t len)
 {
 	char *str;
 	char *cpy_str;
-	char ptr;
+	char *ptr;
 
-	if (!cache || !(str = (char *(malloc(sizeof(char) * len + 1)))))
+	if (!cache || !(str = (char*)malloc(sizeof(char) * len + 1)))
 		return (0);
 	if (ft_strlen(cache) <= start)
 		str[0] = '\0';
@@ -54,7 +54,7 @@ int	ft_final(char **line, char **cache, size_t index)
 		ret = 0;
 	}
 	ft_delmem(cache, 0);
-	*cache = temp;
+	*cache = tmp;
 	return (ret);
 }
 
@@ -70,7 +70,7 @@ int	get_next_line(int fd, char **line)
 	while ((file_read = read(fd, buf, BUFFER_SIZE)) > 0)
 	{
 		buf[file_read] = '\0';
-		if (!tmp = ft_strjoin(cache, buf, file_read))
+		if (!(tmp = ft_strjoin(cache, buf, file_read)))
 			return (ft_delmem(&cache, -1));
 		ft_delmem(&cache, 0);
 		cache = tmp;
@@ -82,5 +82,23 @@ int	get_next_line(int fd, char **line)
 	if (file_read == 0 && (!cache || *cache == '\0')
 				&& (*line = ft_strzero()))
 		return (ft_delmem(&cache, 0));
-	return (ft_final(line, &cache, find_pos(cache)));
+	return (ft_final(line, &cache, ft_findn_index(cache)));
 }
+
+#include <stdio.h>
+
+int main()
+{
+	int ret;
+	char **line = 0;
+
+	while ((ret = get_next_line(0, line)) >= 0)
+	{
+		printf("%2d--%s\n", ret, *line);
+		free(*line);
+		if (ret == 0)
+			return (0);
+	}
+	return (0);
+}
+
