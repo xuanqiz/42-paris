@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 19:46:38 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/16 15:59:33 by xzhao            ###   ########.fr       */
+/*   Created: 2019/11/16 16:01:41 by xzhao             #+#    #+#             */
+/*   Updated: 2019/11/16 16:01:57 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *cache)
 {
@@ -95,3 +95,8 @@ char	*ft_strzero(void)
 	str[0] = '\0';
 	return (str);
 }
+
+/*
+** this one is completely the same as get_next_line_utils.c
+** except the include &  header 
+*/

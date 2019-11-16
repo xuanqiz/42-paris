@@ -6,31 +6,20 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 17:33:39 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/15 21:31:08 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/16 15:58:33 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_substr(const char *cache, size_t start, size_t len)
+int		ft_delmem(char **cache, int ret)
 {
-	char *str;
-	char *cpy_str;
-	char *ptr;
-
-	if (!cache || !(str = (char*)malloc(sizeof(char) * len + 1)))
-		return (0);
-	if (ft_strlen(cache) <= start)
-		str[0] = '\0';
-	else
+	if (*cache)
 	{
-		ptr = (char*)cache + start;
-		cpy_str = str;
-		while (*ptr != '\0' && len-- > 0)
-			*cpy_str++ = *ptr++;
-		*cpy_str = '\0';
+		free(*cache);
+		*cache = NULL;
 	}
-	return (str);
+	return (ret);
 }
 
 int		ft_output(char **line, char **cache, size_t index)
