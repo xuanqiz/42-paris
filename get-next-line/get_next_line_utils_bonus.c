@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 16:01:41 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/16 16:01:57 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/16 16:36:34 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,5 @@ char	*ft_strzero(void)
 
 /*
 ** this one is completely the same as get_next_line_utils.c
-** except the include &  header 
+** except the include &  header
 */
