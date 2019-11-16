@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 16:01:41 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/16 16:36:34 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/16 17:52:38 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(const char *cache)
 	return (i);
 }
 
-char	*ft_strjoin(char *cache, char *buf, size_t size)
+char	*ft_strjoin(char *cache, char *buf)
 {
 	size_t	len;
 	char	*str;
@@ -33,7 +33,7 @@ char	*ft_strjoin(char *cache, char *buf, size_t size)
 
 	i = 0;
 	j = 0;
-	len = ft_strlen(cache) + size;
+	len = ft_strlen(cache) + ft_strlen(buf);
 	if (!(str = (char*)malloc(sizeof(char) * len + 1)))
 		return (0);
 	while (cache && cache[i])
@@ -41,6 +41,8 @@ char	*ft_strjoin(char *cache, char *buf, size_t size)
 		str[i] = cache[i];
 		i++;
 	}
+	if (cache)
+		free(cache);
 	while (buf && buf[j])
 	{
 		str[i] = buf[j];

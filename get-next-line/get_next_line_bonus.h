@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 16:04:07 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/16 17:06:28 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/16 17:54:02 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct		s_gnl
 }					t_gnl;
 
 size_t				ft_strlen(const char *cache);
-char				*ft_strjoin(char *cache, char *buf, size_t size);
+char				*ft_strjoin(char *cache, char *buf);
 int					ft_findn_index(char *cache);
 char				*ft_strzero();
 char				*ft_substr(const char *cache, size_t start, size_t len);

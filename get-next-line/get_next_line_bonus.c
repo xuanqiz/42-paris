@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 16:06:12 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/16 16:43:42 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/16 17:50:23 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int		ft_output(char **line, t_gnl **start, int idx, int fd)
 	else
 	{
 		*line = ft_substr(s, 0, ft_strlen(s));
-		del_lst(start, fd);
+		ft_delist(start, fd);
 		ret = 0;
 	}
 	return (ret);
