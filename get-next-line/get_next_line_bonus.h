@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 16:04:07 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/16 16:42:54 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/16 17:06:28 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,26 @@
 #  define BUFFER_SIZE 128
 # endif
 
-size_t	ft_strlen(const char *cache);
-char	*ft_strjoin(char *cache, char *buf, size_t size);
-int		ft_findn_index(char *cache);
-char	*ft_strzero();
-char	*ft_substr(const char *cache, size_t start, size_t len);
-int		get_next_line(int fd, char **line);
-int		ft_delist(t_gnl **start, int fd);
-t_gnl	*ft_newlist(int fd);
-t_gnl	*ft_findlist(t_gnl **start, int fd);
-int		ft_output(char **line, t_gnl **start, int idx, int fd);
+typedef struct		s_gnl
+{
+	char			*content;
+	struct s_gnl	*next;
+	int				fd;
+}					t_gnl;
+
+size_t				ft_strlen(const char *cache);
+char				*ft_strjoin(char *cache, char *buf, size_t size);
+int					ft_findn_index(char *cache);
+char				*ft_strzero();
+char				*ft_substr(const char *cache, size_t start, size_t len);
+int					get_next_line(int fd, char **line);
+int					ft_delist(t_gnl **start, int fd);
+t_gnl				*ft_newlist(int fd);
+t_gnl				*ft_findlist(t_gnl **start, int fd);
+int					ft_output(char **line, t_gnl **start, int idx, int fd);
 
 #endif
+
+/*
+** the indentation of function should be placed in form with struct
+*/
