@@ -6,7 +6,7 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 19:46:38 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/16 15:59:33 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/17 16:31:26 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_strjoin(char *cache, char *buf, size_t size)
 	return (str);
 }
 
-char	*ft_substr(const char *cache, size_t start, size_t len)
+char	*ft_substr(const char *cache, unsigned int start, size_t len)
 {
 	char *str;
 	char *cpy_str;
@@ -59,7 +59,7 @@ char	*ft_substr(const char *cache, size_t start, size_t len)
 
 	if (!cache || !(str = (char*)malloc(sizeof(char) * len + 1)))
 		return (0);
-	if (ft_strlen(cache) <= start)
+	if (start >= ft_strlen(cache))
 		str[0] = '\0';
 	else
 	{
@@ -90,7 +90,7 @@ char	*ft_strzero(void)
 {
 	char *str;
 
-	if (!(str = (char *)malloc(sizeof(char) * 1)))
+	if (!(str = (char *)malloc(sizeof(char))))
 		return (0);
 	str[0] = '\0';
 	return (str);

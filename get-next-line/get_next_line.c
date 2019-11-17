@@ -6,23 +6,23 @@
 /*   By: xzhao <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 17:33:39 by xzhao             #+#    #+#             */
-/*   Updated: 2019/11/16 15:58:33 by xzhao            ###   ########.fr       */
+/*   Updated: 2019/11/17 16:33:05 by xzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		ft_delmem(char **cache, int ret)
+static int		ft_delmem(char **cache, int ret)
 {
 	if (*cache)
 	{
 		free(*cache);
-		*cache = NULL;
+		*cache = 0;
 	}
 	return (ret);
 }
 
-int		ft_output(char **line, char **cache, size_t index)
+static int		ft_output(char **line, char **cache, int index)
 {
 	char	*tmp;
 	int		ret;
@@ -40,7 +40,7 @@ int		ft_output(char **line, char **cache, size_t index)
 	{
 		if (!(*line = ft_substr(*cache, 0, ft_strlen(*cache))))
 			return (ft_delmem(cache, -1));
-		tmp = NULL;
+		tmp = 0;
 		ret = 0;
 	}
 	ft_delmem(cache, 0);
@@ -48,7 +48,7 @@ int		ft_output(char **line, char **cache, size_t index)
 	return (ret);
 }
 
-int		get_next_line(int fd, char **line)
+int				get_next_line(int fd, char **line)
 {
 	char		buf[BUFFER_SIZE + 1];
 	int			file_read;
